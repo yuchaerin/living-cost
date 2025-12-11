@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Living Cost (생활비 지출 관리)
 
-## Getting Started
+**Living Cost**는 매달 지출을 스마트하게 관리하고, 예산을 효율적으로 운영할 수 있도록 돕는 웹 애플리케이션입니다.
 
-First, run the development server:
+## 📋 주요 기능
+
+- **대시보드**:
+    - 총 지출 및 남은 예산을 한눈에 확인할 수 있는 요약 카드를 제공합니다.
+    - 최근 지출 내역을 리스트 형태로 확인하고 삭제할 수 있습니다.
+    - 월별 지출 현황을 차트로 시각화하여 분석할 수 있습니다.
+- **지출 관리**:
+    - 날짜, 카테고리, 금액, 메모를 입력하여 간편하게 지출을 등록합니다.
+    - 등록된 지출 내역을 CSV 파일로 내보낼 수 있습니다.
+- **설정 및 관리**:
+    - **예산 설정**: 월별 목표 예산을 설정하고 수정할 수 있습니다.
+    - **카테고리 관리**: 지출 카테고리를 자유롭게 추가하거나 삭제할 수 있습니다.
+    - **초기화 및 샘플 데이터**: 데이터를 초기화하거나 테스트용 샘플 데이터를 생성할 수 있습니다.
+- **데이터 저장**:
+    - 모든 데이터는 브라우저의 `localStorage`에 저장되어 별도의 서버 없이도 데이터가 유지됩니다.
+
+## 🛠 기술 스택
+
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Shadcn/UI](https://ui.shadcn.com/) (Radix UI 기반)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Date Handling**: [date-fns](https://date-fns.org/), [react-day-picker](https://react-day-picker.js.org/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## 🚀 설치 및 실행 방법
+
+### 1. 프로젝트 클론
+
+```bash
+git clone https://github.com/yuchaerin/living-cost.git
+cd living-cost
+```
+
+### 2. 의존성 설치
+
+```bash
+npm install
+# 또는
+yarn install
+# 또는
+pnpm install
+```
+
+### 3. 개발 서버 실행
 
 ```bash
 npm run dev
-# or
+# 또는
 yarn dev
-# or
+# 또는
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인하세요.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 프로젝트 구조
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+├── app/                # Next.js App Router 페이지 및 레이아웃
+│   ├── layout.tsx      # 루트 레이아웃
+│   ├── page.tsx        # 대시보드 페이지
+│   ├── settings/       # 설정 페이지
+│   └── statistics/     # 통계 페이지 (예정)
+├── components/         # 리액트 컴포넌트
+│   ├── dashboard/      # 대시보드 관련 컴포넌트 (차트, 폼, 리스트 등)
+│   └── ui/             # 재사용 가능한 UI 컴포넌트 (버튼, 인풋 등)
+├── hooks/              # 커스텀 훅 (use-expenses 등 데이터 로직)
+├── lib/                # 유틸리티 함수
+└── public/             # 정적 파일
+```
 
-## Learn More
+## 📝 라이선스
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+이 프로젝트는 MIT 라이선스를 따릅니다.
