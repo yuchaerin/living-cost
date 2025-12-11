@@ -4,7 +4,7 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { Moon, Sun, Monitor } from "lucide-react"
 
-import { useThemeCustomizer } from "@/components/theme-customizer"
+import { useThemeCustomizer, ThemeColor } from "@/components/theme-customizer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -67,7 +67,7 @@ export function ThemeSelector() {
                         ].map((c) => (
                             <button
                                 key={c.name}
-                                onClick={() => setColor(c.name as any)}
+                                onClick={() => setColor(c.name as ThemeColor)}
                                 className={cn(
                                     "group relative flex flex-col items-center gap-1 p-2 rounded-lg border-2 transition-all hover:bg-accent",
                                     color === c.name ? "border-primary bg-accent" : "border-transparent"

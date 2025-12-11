@@ -2,7 +2,7 @@
 
 import * as React from "react"
 
-type ThemeColor = "default" | "blue" | "yellow" | "pink" | "green"
+export type ThemeColor = "default" | "blue" | "yellow" | "pink" | "green"
 
 interface ThemeCustomizerContextType {
     color: ThemeColor
